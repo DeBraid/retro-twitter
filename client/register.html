@@ -1,26 +1,29 @@
 <template name="twitter_auth">
-      <h1>Twitter Login Example</h1>
-
-      {{#if currentUser}}
-        {{> user}}
-      {{else}}
-        {{> login}}
-      {{/if}}
-
+    {{#if currentUser}} 
+        {{> user}} 
+    {{else}} 
+        {{> login}} 
+    {{/if}}
 </template>
 
 <template name="user">
-      <button class="ui secondary button" id="signOut"> Sign Out</button>
-      <h2>Hello: {{currentUser.profile.name}}</h2>
-      <h4></h4>
-      {{#with searchedTweets }}
-        {{this}}
-      {{/with}}
-      {{#each searchedTweets }}
-          <p>{{ text }}</p>
-      {{/each  }}
+    <button class="ui secondary button" id="signOut"> Sign Out</button>
+    <h2>Welcome: {{currentUser.profile.name}}</h2> 
+    <div class="ui relaxed divided list">
+        {{#each searchedTweets }} {{> tweet_list }} {{/each }}
+    </div>
 </template>
 
 <template name="login">
-  <button class="ui secondary button" id="signIn"> Sign In With Twitter </button>
+    <button class="ui secondary button" id="signIn"> Sign In With Twitter </button>
+</template>
+
+<template name="tweet_list">
+    <div class="item">
+        <i class="large twitter middle aligned icon"></i>
+        <div class="content">
+            <a href="https://twitter.com/{{ user.screen_name }}" class="header">{{ user.screen_name }}</a>
+            <div class="description">{{ text }}</div>
+        </div>
+    </div>
 </template>
