@@ -9,7 +9,8 @@
 <template name="user">
     <button class="ui secondary button" id="signOut"> Sign Out</button>
     <h2>Welcome: {{currentUser.profile.name}}</h2> 
-    <div class="ui relaxed divided list">
+
+    <div class="ui feed">
         {{#each searchedTweets }} {{> tweet_list }} {{/each }}
     </div>
 </template>
@@ -19,11 +20,26 @@
 </template>
 
 <template name="tweet_list">
-    <div class="item">
-        <i class="large twitter middle aligned icon"></i>
+    <div class="event">
+        <div class="label">
+            <img src="{{ user.profile_image_url }}">
+        </div>
         <div class="content">
-            <a href="https://twitter.com/{{ user.screen_name }}" class="header">{{ user.screen_name }}</a>
-            <div class="description">{{ text }}</div>
+            <div class="summary">
+                <a class="user">{{ user.screen_name }}</a>
+                <div class="date">
+                    {{ created_at }}
+                </div>
+                <div class="extra text">
+                    {{ text }}
+                </div>
+            </div>
+            <div class="meta">
+                <a class="like">
+                    <i class="retweet icon"></i> {{ retweet_count }}
+                    <i class="favorite icon"></i> {{ favorite_count }}
+                </a>
+            </div>
         </div>
     </div>
 </template>
