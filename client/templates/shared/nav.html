@@ -1,0 +1,32 @@
+<template name="nav">
+    <div class="ui main text container">
+        <h3 class="ui header">Since the Twitter IPO, the product has suffered.  retro twitter rolls back user experience to a simpler time, when 140 characters limits meant something.  Take back your twitter, slay the failwhale.</h3>
+    </div>
+    <div class="ui borderless main menu">
+        <div class="ui text container">
+            <div href="#" class="header item">
+                <img class="logo" src="https://pbs.twimg.com/media/BozkfWEIUAECqov.png" style="margin-right: 1rem;"> 
+                retro twitter
+            </div>
+            <div class="right menu">
+                {{> register }}
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="register">
+    <div class="item">
+        <div class="ui input">
+            <input type="input" placeholder="@User_Name">
+        </div>
+    </div>
+    <div class="item">
+        <div class="ui input">
+            <input type="password" placeholder="Password">
+        </div>
+    </div>
+    <div class="item">
+        <button class="ui green button">GO!</button>
+    </div>
+</template>
