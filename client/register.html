@@ -12,7 +12,13 @@
 <template name="user">
       <button class="ui secondary button" id="signOut"> Sign Out</button>
       <h2>Hello: {{currentUser.profile.name}}</h2>
-      <h4>{{ searchedTweets }}</h4>
+      <h4></h4>
+      {{#with searchedTweets }}
+        {{this}}
+      {{/with}}
+      {{#each searchedTweets }}
+          <p>{{ text }}</p>
+      {{/each  }}
 </template>
 
 <template name="login">

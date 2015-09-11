@@ -11,17 +11,21 @@ Template.user.events({
   }
 });
 
+Meteor.call('searchTweets', 'meteorJS', function (error, response) {
+	if (error) {
+		console.log('Error in searchTweets client side', error);
+	};
+	var statuses = response.result.statuses;
+	console.log('statuses', statuses);
+	Session.set('tweets', statuses);
+	// return response.result;
+	// return response.result.statuses;
+});
 
 Template.user.helpers({
 	searchedTweets: function () {
-		var data;
-		Meteor.call('searchTweets', 'meteorJS', function (error, response, baz) {
-			if (error) {
-				console.log('Error in searchTweets client side', error);
-			};
-			console.log('response in .rendered', response.result);
-			data = response.result;
-		});
-		return data;
+		return Session.get('tweets');
+		// console.log('return value of searchedTweets in user.helers', data);
+		// return data;
 	}
 });
