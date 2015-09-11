@@ -10,22 +10,11 @@
 </template>
 
 <template name="user">
-
-      <input type="button" id="signOut" value="Sign out" />
-
-      <h2>Your Information</h2>
-
-      <ul>
-        <li>Meteor ID:         {{currentUser.id}}</li>
-        <li>Name:              {{currentUser.profile.name}}</li>
-        <li>ID:                {{currentUser.services.twitter.id}}</li>
-        <li>Screen Name:       {{currentUser.services.twitter.screenName}}</li>
-        <li>Profile Image URL: {{currentUser.services.twitter.profile_image_url}}</li>
-        <li>Language:          {{currentUser.services.twitter.lang}}</li>
-      </ul>
-
+      <button class="ui secondary button" id="signOut"> Sign Out</button>
+      <h2>Hello: {{currentUser.profile.name}}</h2>
+      <!-- https://dev.twitter.com/rest/reference/ -->
 </template>
 
 <template name="login">
-  <input type="button" id="signIn" value="Sign in" />
+  <button class="ui secondary button" id="signIn"> Sign In With Twitter </button>
 </template>
