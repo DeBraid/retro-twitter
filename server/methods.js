@@ -17,7 +17,6 @@ Meteor.methods({
                     count: 10
                 },
                 function (err, data, response) {
-                    console.log('data in get', data)
                     done(null, data);
                 }
             );
