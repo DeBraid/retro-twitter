@@ -1,10 +1,7 @@
-Template.login.events({
-    'click #signIn': function () {
-        Meteor.loginWithTwitter();
-    }
-});
-
-Template.register.events({
+/*****************************************************************************/
+/* Search: Event Handlers */
+/*****************************************************************************/
+Template.search.events({
     'click #search': function (e, t) {
         search(e);
     },
@@ -32,4 +29,3 @@ function getSearchResultsFromApi(query) {
         Session.set('statuses', statuses);
     });
 }
-
