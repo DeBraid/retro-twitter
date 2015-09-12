@@ -1,8 +1,9 @@
 <template name="nav">
     <div class="ui main text container">
         <h1></h1>
-        <h3 class="ui header">retro twitter rolls back user experience to simpler times, when 140 characters meant something.  Take back twitter, slay the failwhale.</h3>
-        {{> twitter_auth }}
+        <h3 class="ui header">
+            retro twitter rolls back user experience to simpler times, when 140 characters meant something.  Take back twitter, slay the failwhale. 
+        </h3>
     </div>
     <div class="ui borderless main menu">
         <div class="ui text container">
@@ -10,9 +11,40 @@
                 <img class="logo" src="https://pbs.twimg.com/media/BozkfWEIUAECqov.png" style="margin-right: 1rem;"> 
                 retro twitter
             </div>
+            <a href="#" class="item">
+                {{> twitter_auth }}
+            </a>
             <div class="right menu">
                 {{> search }}
             </div>
         </div>
     </div>
+</template>
+
+<template name="twitter_auth">
+    {{#if currentUser}} 
+        {{> user}} 
+    {{else}} 
+        {{> login}} 
+    {{/if}}
+</template>
+
+<template name="user">
+    <span id="signOut">
+        Sign Out of @{{currentUser.profile.name}}
+    </span>
+    <!-- <button class="ui secondary right floated button" id="signOut"> 
+        Sign Out of @{{currentUser.profile.name}}
+    </button> -->
+</template>
+
+<template name="login">
+    <span id="signIn">
+        Sign In With 
+        <i class="ui twitter icon large" style="margin-left: 0.5rem;"></i>
+    </span>
+    <!-- <button class="ui primary right floated button" id="signIn"> 
+        Sign In With 
+        <i class="ui twitter icon large" style="margin-left: 0.5rem;"></i>
+    </button> -->
 </template>
