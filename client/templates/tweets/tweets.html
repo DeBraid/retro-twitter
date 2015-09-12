@@ -1,0 +1,35 @@
+<template name="tweets">
+    <div class="ui feed">
+        {{#each searchedTweets }} 
+            {{> tweet_list }} 
+        {{/each }}
+    </div>
+</template>
+
+<template name="tweet_list">
+    <div class="event">
+        <div class="label">
+            <img src="{{ user.profile_image_url }}">
+        </div>
+        <div class="content">
+            <div class="summary">
+                <a href="https://twitter.com/{{ user.screen_name }}" 
+                    class="user" 
+                    target="_blank">
+                        {{ user.screen_name }}</a>
+                <div class="date">
+                    {{ created_at }}
+                </div>
+                <div class="extra text">
+                    {{ text }}
+                </div>
+            </div>
+            <div class="meta">
+                <a class="like">
+                    <i class="retweet icon"></i> {{ retweet_count }}
+                    <i class="favorite icon"></i> {{ favorite_count }}
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

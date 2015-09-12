@@ -4,8 +4,8 @@ Template.user.events({
     },
 });
 
-Template.user.helpers({
-    searchedTweets: function () {
-        return Session.get('statuses');
-    }
-});
+// Template.user.helpers({
+//     searchedTweets: function () {
+//         return Session.get('statuses');
+//     }
+// });
