@@ -12,10 +12,17 @@ Template.user.events({
 });
 
 Template.register.events({
-  'click .search': function (e,t) {
+  'click #search': function (e,t) {
 	var q = $(e.target).val();
 	console.log('searching w/ q', q);
 	search(q);
+  },
+   'keypress #search': function (e, t) {
+    if (e.which === 13) {
+      var q = $(e.target).val();
+	console.log('searching w/ q', q);
+	search(q);
+    }
   }
 });
 
