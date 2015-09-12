@@ -1,23 +1,27 @@
 <template name="nav">
     <div class="ui main text container">
-        <h1></h1>
         <h3 class="ui header">
             retro twitter rolls back user experience to simpler times, when 140 characters meant something.  Take back twitter, slay the failwhale. 
         </h3>
     </div>
     <div class="ui borderless main menu">
-        <div class="ui text container">
-            <div href="#" class="header item">
-                <img class="logo" src="https://pbs.twimg.com/media/BozkfWEIUAECqov.png" style="margin-right: 1rem;"> 
-                retro twitter
-            </div>
-            <a href="#" class="item">
-                {{> twitter_auth }}
-            </a>
-            <div class="right menu">
-                {{> search }}
-            </div>
+        {{> navbar }}
+    </div>
+</template>
+
+<template name="navbar">
+    <div class="ui text container">
+        <div href="#" class="header item">
+            <img class="logo" src="https://pbs.twimg.com/media/BozkfWEIUAECqov.png" style="margin-right: 1rem;"> 
+            retro twitter
         </div>
+        <a href="#" class="item"></a>
+        <a href="#" class="item">{{> twitter_auth }}</a>
+        <a href="#" class="item"></a>
+        <a href="#" class="item"></a>
+        <a href="#" class="ui right aligned item">
+            {{> search }}
+        </a>
     </div>
 </template>
 

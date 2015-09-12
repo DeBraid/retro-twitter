@@ -1,4 +1,4 @@
-Template.nav.rendered = function onRenderedNav () {
+Template.navbar.rendered = function onRenderedNav () {
     // fix main menu to page on passing
     $('.main.menu').visibility({
       type: 'fixed'
