@@ -1,8 +1,10 @@
 <template name="tweets">
-    <div class="ui feed container">
-        {{#each searchedTweets }} 
-            {{> tweet_list }} 
-        {{/each }}
+    <div class="ui main text container">
+        <div class="ui feed">
+            {{#each searchedTweets }} 
+                {{> tweet_list }} 
+            {{/each }}
+        </div>
     </div>
 </template>
 
