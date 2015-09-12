@@ -11,17 +11,23 @@
 
 <template name="navbar">
     <div class="ui text container">
-        <div href="#" class="header item">
-            <img class="logo" src="https://pbs.twimg.com/media/BozkfWEIUAECqov.png" style="margin-right: 1rem;"> 
-            retro twitter
+        <div class="ui stackable two column grid">
+            <div class="column">
+                <div href="#" class="item">
+                    <img class="logo" src="https://pbs.twimg.com/media/BozkfWEIUAECqov.png"> 
+                    <span style="margin-right:3rem;">
+                        retro twitter
+                    </span>
+                    <a href="#" class="item">{{> twitter_auth }}</a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui right aligned item">
+                    {{> search }}
+                </div>
+                
+            </div>
         </div>
-        <a href="#" class="item"></a>
-        <a href="#" class="item">{{> twitter_auth }}</a>
-        <a href="#" class="item"></a>
-        <a href="#" class="item"></a>
-        <a href="#" class="ui right aligned item">
-            {{> search }}
-        </a>
     </div>
 </template>
 
@@ -41,7 +47,7 @@
 
 <template name="login">
     <span id="signIn">
-        Sign In With 
+        Sign In 
         <i class="ui twitter icon large" style="margin-left: 0.5rem;"></i>
     </span>
 </template>
