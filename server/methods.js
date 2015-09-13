@@ -45,6 +45,29 @@ Meteor.methods({
         console.log('stream', stream);
         return stream;
     },
+    'getSingleStream': function getSingleStream(screenName) {
+        var stream = Async.runSync(function (done) {
+            T.get('statuses/user_timeline', 
+                { screen_name: screenName,   count: 10 },
+                function (err, data, response) {
+                    done(null, data);
+                }
+            );
+        });
+        return stream;
+        // var stream = [];
+        // var followers = Meteor.call('getFollowers', screenName );
+        // return followers;
+        // console.log('followers', followers);
+        // followers.result.forEach(function (follower) {
+        //     console.log('follower', follower);
+
+        //     stream.push(timeline.result);
+
+        // });
+        // console.log('stream', stream);
+        // return stream;
+    },
     'getFollowers': function getFollowers(screenName) {
         var followers = Async.runSync(function (done) {
             //  get the list of user id's that follow screenName

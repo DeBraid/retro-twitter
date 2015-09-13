@@ -1,0 +1,10 @@
+<template name="Stream">
+	<h2>Stream</h2>
+	{{> stream_container}}  
+</template>
+
+<template name="stream_container">
+	{{#each stream }}
+	  {{> tweet_list }}
+	{{/each}}
+</template>
