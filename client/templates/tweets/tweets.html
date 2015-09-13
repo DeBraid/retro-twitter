@@ -25,6 +25,17 @@
                 </div>
                 <div class="extra text">
                     {{ text }}
+
+                    <!-- {{#each url in entities.urls }}
+                        {{url}}
+                    {{/each }} -->
+                </div>
+                <div class="user">
+                    {{#with entities }}
+                      {{#each urls }}
+                        <a href="{{ url }}">{{ url }}</a>
+                      {{/each }}
+                    {{/with}}
                 </div>
             </div>
             <div class="meta">
