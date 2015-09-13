@@ -4,7 +4,6 @@ Template.twitter_auth.events({
         	var currentUser = Meteor.user();
 	        if (currentUser) {
 	            var name = currentUser.profile.name.replace(' ', '_');
-	            console.log('go to profile name', name);
 	            Router.go('stream', { screen_name: name } );
 	        };
         });
