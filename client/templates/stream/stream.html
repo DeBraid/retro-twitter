@@ -1,38 +1,27 @@
 <template name="Stream">
-	{{> stream_layout}}
-</template>
-
-<template name="stream_container">
-	<div class="ui main text container">
-        <div class="ui feed">
-			{{#each stream }}
-			  {{> tweet_list }}
-			{{/each}}
-        </div>
-	</div>
-</template>
-
-<template name="stream_layout">
 	<div class="pusher">
 	    <div class="ui inverted vertical masthead center aligned segment">
 			<div class="ui text container">
 	            <h2>Search a User Name</h2>
-
 	            {{> search}}
-	            
-	            <!-- <div class="ui huge icon input">
-					<input type="text" placeholder="...">
-					<i class="search icon"></i>
-				</div> -->
 	        </div>
 	    </div>
-
 	    <div class="ui vertical stripe segment">
 	        <div class="ui middle aligned stackable grid container">
 	            <div class="row">
-					{{> stream_container}}  
+					{{> user_stream}}  
 	            </div>
 	        </div>
 	    </div>
+	</div>
+</template>
+
+<template name="user_stream">
+	<div class="ui main text container">
+        <div class="ui feed">
+			{{#each user_stream }}
+			  	{{> tweet_list }}
+			{{/each}}
+        </div>
 	</div>
 </template>
