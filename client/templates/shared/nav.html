@@ -18,7 +18,9 @@
                     <span style="margin-right:3rem;">
                         retro twitter
                     </span>
-                    <a href="#" class="item">{{> twitter_auth }}</a>
+                    <a href="#" class="item">
+                        {{> twitter_auth }}
+                    </a>
                 </div>
             </div>
             <div class="column">
@@ -29,25 +31,4 @@
             </div>
         </div>
     </div>
-</template>
-
-<template name="twitter_auth">
-    {{#if currentUser}} 
-        {{> user}} 
-    {{else}} 
-        {{> login}} 
-    {{/if}}
-</template>
-
-<template name="user">
-    <span id="signOut">
-        Sign Out of @{{currentUser.profile.name}}
-    </span>
-</template>
-
-<template name="login">
-    <span id="signIn">
-        Sign In 
-        <i class="ui twitter icon large" style="margin-left: 0.5rem;"></i>
-    </span>
 </template>

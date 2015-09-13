@@ -1,0 +1,24 @@
+<template name="twitter_auth">
+    {{#if currentUser}} 
+    	<button class="ui mini blue basic button">
+	        {{> logout}} 
+		</button>
+		{{else}} 
+    	<button class="ui twitter button">
+        	{{> login}} 
+    	</button>
+    {{/if}}
+</template>
+
+<template name="logout">
+    <span id="signOut">
+        Sign Out of @{{currentUser.profile.name}}
+    </span>
+</template>
+
+<template name="login">
+    <span id="signIn">
+        Sign In 
+        <i class="ui twitter icon large" style="margin-left: 0.5rem;"></i>
+    </span>
+</template>
