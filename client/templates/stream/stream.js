@@ -5,6 +5,3 @@ Template.stream_container.helpers({
 		return data;
 	}
 });
-
-// getFollowerStreamResultsFromApi('royal_arse');
-// *************************** //
