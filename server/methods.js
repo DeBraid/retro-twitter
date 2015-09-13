@@ -55,18 +55,6 @@ Meteor.methods({
             );
         });
         return stream;
-        // var stream = [];
-        // var followers = Meteor.call('getFollowers', screenName );
-        // return followers;
-        // console.log('followers', followers);
-        // followers.result.forEach(function (follower) {
-        //     console.log('follower', follower);
-
-        //     stream.push(timeline.result);
-
-        // });
-        // console.log('stream', stream);
-        // return stream;
     },
     'getFollowers': function getFollowers(screenName) {
         var followers = Async.runSync(function (done) {
