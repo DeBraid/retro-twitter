@@ -23,19 +23,11 @@ Meteor.methods({
         });
         return tweets;
     },
-    'getFollowers': function getFollowers(screenName) {
+    'getFollowerStream': function getFollowerStream(screenName) {
         var stream = [];
-        var followers = Async.runSync(function (done) {
-            //  get the list of user id's that follow screenName
-            T.get('followers/ids', 
-                { screen_name: screenName,   count: 10 },
-                function (err, data, response) {
-                    done(null, data.ids);
-                }
-            );
-
-        });
+        var followers = Meteor.call('getFollowers', screenName );
         // return followers;
+        console.log('followers', followers);
         followers.result.forEach(function (follower) {
             console.log('follower', follower);
 
@@ -52,5 +44,18 @@ Meteor.methods({
         });
         console.log('stream', stream);
         return stream;
+    },
+    'getFollowers': function getFollowers(screenName) {
+        var followers = Async.runSync(function (done) {
+            //  get the list of user id's that follow screenName
+            T.get('followers/ids', 
+                { screen_name: screenName,   count: 10 },
+                function (err, data, response) {
+                    done(null, data.ids);
+                }
+            );
+
+        });
+        return followers;
     }
 });
