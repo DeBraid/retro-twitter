@@ -24,11 +24,7 @@
                     {{ formatDate created_at }}
                 </div>
                 <div class="extra text">
-                    {{ text }}
-
-                    <!-- {{#each url in entities.urls }}
-                        {{url}}
-                    {{/each }} -->
+                    {{ removeLinks text }}
                 </div>
                 <div class="user">
                     {{#with entities }}
