@@ -13,11 +13,26 @@ Template.search.events({
     }
 });
 
-getSearchResultsFromApi('#hamont');
+Template.search_layout.rendered = function () {
+    var data = this.data;
+    $('#search').val(data);
+    // $('#search').click();
+    // Session.set('query', data);
+    $('#search').on('change', function (event) {
+      console.log('change event!');
+        var query = $(event.target).val();
+        console.log('query', query );
+        Router.go('/search/?q=' +  query );
+        getSearchResultsFromApi(query);
+    });
+}
 
 function search (e) {
-	var q = $(e.target).val();
-    getSearchResultsFromApi(q);
+	// var q = $(e.target).val();
+    Tracker.autorun(function () {
+        var q = Session.get('query');
+        getSearchResultsFromApi(q);
+    });
 }
 
 function getSearchResultsFromApi(query) {
