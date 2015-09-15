@@ -16,6 +16,7 @@
 	    <div class="ui vertical stripe segment">
 	        <div class="ui middle aligned stackable grid container">
 	            <div class="row">
+	            	{{> follower_stream}}
 					{{> user_stream}}  
 	            </div>
 	        </div>
@@ -32,3 +33,14 @@
         </div>
 	</div>
 </template>
+
+<template name="follower_stream">
+	<div class="ui main text container">
+        <div class="ui feed">
+			{{#each follower_stream }}
+			  	{{> tweet_list }}
+			{{/each}}
+        </div>
+	</div>
+</template>
+

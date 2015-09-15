@@ -5,3 +5,13 @@ Template.user_stream.helpers({
 		return data;
 	}
 });
+
+
+
+Template.follower_stream.helpers({
+	follower_stream: function () {
+		var data = Session.get('follower_stream');
+		// console.log('user_stream', data);
+		return data;
+	}
+});

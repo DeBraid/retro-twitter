@@ -27,22 +27,23 @@ Meteor.methods({
     'getFollowerStream': function getFollowerStream(screenName) {
         var stream = [];
         var followers = Meteor.call('getFollowers', screenName );
-        console.log('followers', followers);
+        // console.log('followers', followers);
+        
         followers.result.forEach(function (follower) {
-            // console.log('follower', follower);
-
             var timeline = Async.runSync(function (done) {
                 T.get('statuses/user_timeline', 
-                    { user_id: follower,   count: 10 },
+                    { user_id: follower,   count: 5 },
                     function (err, data, response) {
                         done(null, data);
                     }
                 );
             });
-            stream.push(timeline.result);
-
+            
+            timeline.result.forEach(function (tweet) {
+                stream.push(tweet);
+            });
         });
-        console.log('stream', stream);
+        // console.log('stream', stream);
         return stream;
     },
     'getSingleStream': function getSingleStream(screenName) {
