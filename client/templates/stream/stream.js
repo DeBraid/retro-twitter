@@ -6,6 +6,17 @@ Template.user_stream.helpers({
 	}
 });
 
+Template.Stream.helpers({
+	searchType: function () {
+		var routeName =  Router.current().route.getName();
+		if (routeName == 'stream') {
+			return 'users by @username'
+		} else {
+			return 'anything on Twitter'			
+		}
+	}
+})
+
 
 
 Template.follower_stream.helpers({
